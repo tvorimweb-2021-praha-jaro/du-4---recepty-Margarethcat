@@ -1,6 +1,11 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, ::after, ::before { box-sizing: inherit; }
+html {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
 
 
 /* -------------------------------------------------- */
@@ -38,3 +43,177 @@ body {
 /* ----- DOLE BUDE TVOJE CSS ----- */
 /* ------------------------------- */
 
+main,
+.small-recipes {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.recipe {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    flex: 1 0 100%;
+
+    min-height: 90px;
+    padding: .5rem;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.large-recipe,
+.large-recipe > .recipe {
+    min-height: 200px;
+    flex: 1 0 100%;
+}
+
+.r1 {
+    background-image: linear-gradient(
+            rgba(0, 0, 0, .3),
+            rgba(0, 0, 0, .3)
+    ),
+    url('images/burger.jpg');
+}
+
+.r2 {
+    background-image: linear-gradient(
+            rgba(0, 0, 0, .3),
+            rgba(0, 0, 0, .3)
+    ),
+    url('images/sushi.jpg');
+}
+
+.r3 {
+    background-image: linear-gradient(
+            rgba(0, 0, 0, .3),
+            rgba(0, 0, 0, .3)
+    ),
+    url('images/rajcata.jpg');
+}
+
+.r4 {
+    background-image: linear-gradient(
+            rgba(0, 0, 0, .3),
+            rgba(0, 0, 0, .3)
+    ),
+    url('images/kure.jpg');
+}
+
+.r5 {
+    background-image: linear-gradient(
+            rgba(0, 0, 0, .3),
+            rgba(0, 0, 0, .3)
+    ),
+    url('images/grilovani.jpg');
+}
+
+.recipe > .title,
+.recipe > .category,
+.recipe > .comments {
+    display: flex;
+    color: white;
+}
+
+.recipe > .category,
+.recipe > .comments {
+    align-self: flex-start;
+
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: .8rem;
+    font-weight: 400;
+}
+
+.recipe > .title {
+    margin: 0;
+
+    flex: 1 0 100%;
+    align-self: flex-end;
+
+    font-family: "Raleway", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.large-recipe > .recipe > .title {
+    font-size: 1.75rem;
+}
+
+.recipe > .title {
+    bottom: 0;
+    left: 0;
+}
+
+.recipe > .category {
+    top: 0;
+    left: 0;
+}
+
+.recipe > .comments {
+    top: 0;
+    right: 0;
+}
+
+@media (min-width: 480px) {
+    .recipe {
+        flex: 1 0 50%;
+        min-height: 150px;
+        padding: 1.25rem;
+    }
+
+    .large-recipe,
+    .large-recipe > .recipe {
+        flex: 1 0 100%;
+        min-height: 250px;
+    }
+
+    .recipe > .title {
+        font-size: 1.5rem;
+    }
+
+    .large-recipe > .recipe > .title {
+        font-size: 2rem;
+    }
+
+    .r2 {
+        order: 1;
+    }
+
+    .r3 {
+        order: 3;
+    }
+
+    .r4 {
+        order: 2;
+    }
+
+    .r5 {
+         order: 4;
+    }
+}
+
+@media (min-width: 860px) {
+    .large-recipe,
+    .small-recipes {
+        flex: 1 0 50%;
+    }
+
+    .recipe {
+        min-height: 200px;
+    }
+
+    .large-recipe,
+    .large-recipe > .recipe {
+        min-height: 400px;
+    }
+
+    .recipe > .title {
+        font-size: 1.75rem;
+    }
+
+    .large-recipe > .recipe > .title {
+        font-size: 3rem;
+    }
+}
